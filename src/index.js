@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
 import './css/index.css';
 import App from './App';
-import ExampleData from './tutorial/ExampleData';
-import ExampleData2 from './tutorial/ExampleData2';
+import ExampleData from './tutorial/exampleData';
 import Button from './tutorial/defaultProps';
 
 import registerServiceWorker from './registerServiceWorker';
@@ -30,19 +28,10 @@ const data = [
         "description": "Created new account"
     }
 ];
-const exampleDataObj = {headings: headings, data: data};
-// style 1
-const exampleData = document.getElementById('example-data');
+const dataContainer = document.getElementById('example-data');
 ReactDOM.render(
-    <ExampleData exampleDataObj={exampleDataObj} />,
-    exampleData
-);
-
-// style 2
-const exampleData2 = document.getElementById('example-data2');
-ReactDOM.render(
-    <ExampleData2 headings={headings} dataSet={data} />,
-    exampleData2
+    <ExampleData headings={headings} dataSet={data} />,
+    dataContainer
 );
 
 Button.defaultProps = {text: 'I am a button'};

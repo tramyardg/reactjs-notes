@@ -4,11 +4,11 @@ import ReactDOM from 'react-dom';
 const people = ['Rowe', 'Prevost', 'Gare'];
 
 const peopleLis = people.map(person => {
-    return (<li>{person}</li>);
+  return (<li>{person}</li>);
 });
 
 // ReactDOM.render goes here:
 ReactDOM.render(
-    <ul>{peopleLis}</ul>,
-    document.getElementById('app')
+  <ul>{peopleLis}</ul>,
+  document.getElementById('app')
 );
