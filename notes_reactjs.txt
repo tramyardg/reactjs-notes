@@ -1,0 +1,211 @@
+npx create-react-app myapp
+cd myapp
+npm start
+----------------  
+you can add react to existing app
+or you can create one
+----------------
+app starts at index.js then
+reads whatever the imports
+----------------
+they have a public folder where you can find 
+index page
+favicon.ico
+and manifest.json
+----------------
+just like laravel they have public 
+----------------
+css files can be stored in src folder not in public
+----------------
+ReactDOM.render(element, container)
+----------------
+no need to reload react loads on its own
+----------------
+variable must be inside render() method
+JSX elements do not require a quotes
+----------------
+two important imports
+import React from 'react';
+- for creating a class 
+import ReactDOM from 'react-dom';
+- for rendering
+----------------
+In JSX, you can't use the word class! You have to use className instead:
+----------------
+In JSX, you have to include the slash.
+Fine in JSX:
+<br />
+NOT FINE AT ALL in JSX:
+<br>
+----------------
+"Even though I am located in between JSX tags, treat me like ordinary JavaScript and not like JSX."
+You can do this by wrapping your code in curly braces.
+<h1>{2 + 3}</h1>
+----------------
+https://reactjs.org/docs/lists-and-keys.html#keys
+------------------
+passing data between class 
+const data = [{...},{...},,]
+ReactDOM.render(
+    <ExampleData data={data} />,
+    exampleData
+);
+class ExampleData extends Component {
+	render() {
+	....
+	// this.props.data
+	// this.props.customTag
+	}
+}
+----------------------
+const headings = ['When', 'Who', 'Description'];
+const data = [{..},{},{}];
+const exampleDataObj = {headings: headings, data: data};
+this.props.exampleDataObj.headings
+this.props.exampleDataObj.data
+---------------------
+{/* This is a comment */}
+/* Multi
+ Line
+ Comment
+ */
+ ----------------------
+ Styles in JSX
+ "We can represent this as a JavaScript object in the CamelCase fashion."
+ var headingStyle = { backgroundColor: 'FloralWhite',
+ fontSize: '19px'
+ };
+ return (<th style={headingStyle}>{this.props.heading}</th>)
+ -----------------------
+ Conditionals in JSX
+// Using ternary operator
+<div className={ success ? 'green' : 'red' }/>
+React.createElement("div", {className: success ? 'green' : 'red'})
+// Moving if/else logic to a function
+var showResult = function() {
+ if(this.props.success === true)
+ return <SuccessComponent />
+ else
+ return <ErrorComponent />
+};
+------------------------
+Custom attribute
+// data-custom-attribute will be rendered
+<table data-custom-attribute = 'super_awesome_table'>
+</table>
+-------------------------
+// Using HTML entity inside JSX tags.
+<div> Mike &amp; Shawn </div>
+// will produce
+ React.createElement("div", null, " Mike & Shawn ")
+------------------------------ 
+handle event
+<img onClick={myFunc} />
+function makeDoggy(e) {
+  // Call this extremely useful function on an <img>.
+  // The <img> will become a picture of a doggy.
+  e.target.setAttribute('src', 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-puppy.jpeg');
+  e.target.setAttribute('alt', 'doggy');
+}
+class Button extends React.Component {
+  scream() {
+    alert('AAAAAAAAHHH!!!!!');
+  }
+  render() {
+    return (<button onClick={this.scream}>AAAAAH!</button>);
+  }
+}
+----------------------------------
+.map
+const strings = ['Home', 'Shop', 'About Me'];
+const listItems = strings.map(string => <li>{string}</li>);
+<ul>{listItems}</ul>
+----------------------------
+conditional
+// if/else statement begins here:
+if (coinToss() === 'heads') {
+    img = <img src={pics.kitty} />
+} else {
+    img = <img src={pics.doggy} />
+}
+const img = <img src={pics[coinToss() == 'heads' ? 'kitty' : 'doggy']} />;
+-----------------------------------------------
+createElement()
+React.createElement(
+  type, (such as 'div' or 'span'
+  [props],  React component type (a class or a function), or a React fragment type.
+  [...children]
+)
+-----------------
+class name
+That name should be written in UpperCamelCase. In this case, your chosen name is MyComponentClass.
+Render A Component
+ReactDOM.render(
+	<MyComponentClass />,
+  document.getElementById('app')
+);
+------------------------------
+display on browser with JSON.stringtify
+const stringProps = JSON.stringify(this.props);
+------------------------
+import React from 'react';
+export class Greeting extends React.Component {
+  render() {
+    return <h1>Hi there, {this.props.name}!</h1>;
+  }
+}
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Greeting } from './Greeting';
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hullo and, "Welcome to The Newzz," "On Line!"</h1>
+        {<Greeting name="Leo" />}
+        <article>Latest newzz:  where is my phone?</article>
+      </div>
+    );
+  }
+}
+ReactDOM.render(<App />, document.getElementById('app'));
+------------------------
+this.props.children
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { List } from './List';
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <List type='Living Musician'>
+          <li>Sachiko M</li>
+          <li>Harvey Sid Fisher</li>
+        </List>
+        <List type='Living Cat Musician'>
+          <li>Nora the Piano Cat</li>
+        </List>
+      </div>
+    );
+  }
+}
+ReactDOM.render(
+  <App />, 
+  document.getElementById('app')
+);
+import React from 'react';
+export class List extends React.Component {
+  render() {
+    let titleText = `Favorite ${this.props.type}`;
+    if (this.props.children instanceof Array) {
+    	titleText += 's';
+    }
+    return (
+      <div>
+        <h1>{titleText}</h1>
+        <ul>{this.props.children}</ul>
+      </div>
+    );
+  }
+}
+-------------------------------
