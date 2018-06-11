@@ -7,21 +7,22 @@ import MyData from './tutorial/myData';
 import ExampleData from './tutorial/exampleData';
 import Button from './tutorial/defaultProps';
 
+// state testing
+import MoodToggle from './tutorial/state/MoodToggle';
+import ColorToggle from './tutorial/state/ColorToggle';
+
 import registerServiceWorker from './registerServiceWorker';
 const rootDiv = document.getElementById('root');
 ReactDOM.render(<App />, rootDiv);
 
 const dataContainer = document.getElementById('example-data');
-ReactDOM.render(
-    <ExampleData headings={MyData.headingData} dataSet={MyData.rowData}/>,
-    dataContainer
-);
+ReactDOM.render(<ExampleData headings={MyData.headingData} dataSet={MyData.rowData}/>, dataContainer);
 
 Button.defaultProps = {text: 'I am a button'};
+ReactDOM.render(<Button />, document.getElementById('testing'));
 
-ReactDOM.render(
-    <Button />,
-    document.getElementById('testing')
-);
+ReactDOM.render(<MoodToggle />, document.getElementById('state-mood'));
+ReactDOM.render(<ColorToggle />, document.getElementById('state-toggle-color'));
+
 
 registerServiceWorker();
