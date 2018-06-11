@@ -4,25 +4,25 @@ const green = '#107400';
 const yellow = '#FFD712';
 
 class ColorToggle extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {color: green};
     // add this line below so that you can call setState or this keyword in changeColor method
     this.changeColor = this.changeColor.bind(this);
   }
 
-  changeColor() {
+  changeColor () {
     const newColor = this.state.color === green ? yellow : green;
     this.setState({color: newColor});
   }
 
-  render() {
+  render () {
     return (
-        <div style={{background: this.state.color}}>
-          <button onClick={this.changeColor}>
+      <div style={{background: this.state.color}}>
+        <button onClick={this.changeColor}>
             Change color
-          </button>
-        </div>
+        </button>
+      </div>
     );
   }
 }
