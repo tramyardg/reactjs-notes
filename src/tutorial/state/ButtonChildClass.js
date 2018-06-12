@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class ChildClass extends Component {
+export class ButtonChildClass extends Component {
   render () {
     // console.log(this.props.clicks);
     return (

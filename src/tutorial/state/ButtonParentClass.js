@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {ChildClass} from './ChildClass';
+import {ButtonChildClass} from './ButtonChildClass';
 
-class ParentClass extends Component {
+class ButtonParentClass extends Component {
   constructor (props) {
     super(props);
     this.state = {totalClicks: 0};
@@ -15,8 +15,9 @@ class ParentClass extends Component {
   }
 
   render () {
-    return (<ChildClass onClick={this.handleClick} numClicks={this.state.totalClicks}/>);
+    return (<ButtonChildClass onClick={this.handleClick} numClicks={this.state.totalClicks}/>);
   }
 }
 
-export default ParentClass;
+// always do this if you're rendering this component elsewhere
+export default ButtonParentClass;
