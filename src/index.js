@@ -11,6 +11,8 @@ import Button from './tutorial/defaultProps';
 import MoodToggle from './tutorial/state/MoodToggle';
 import ColorToggle from './tutorial/state/ColorToggle';
 
+import Parent from './tutorial/state/Parent';
+
 import registerServiceWorker from './registerServiceWorker';
 const rootDiv = document.getElementById('root');
 ReactDOM.render(<App />, rootDiv);
@@ -24,5 +26,6 @@ ReactDOM.render(<Button />, document.getElementById('testing'));
 ReactDOM.render(<MoodToggle />, document.getElementById('state-mood'));
 ReactDOM.render(<ColorToggle />, document.getElementById('state-toggle-color'));
 
+ReactDOM.render(<Parent />, document.getElementById('child-parent-state'));
 
 registerServiceWorker();
