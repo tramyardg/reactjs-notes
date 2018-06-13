@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {SelectChildClass} from './SelectChildClass';
+import {SelectSiblingClass} from './SelectSiblingClass';
 
 class SelectParentClass extends Component {
   constructor (props) {
     super(props);
     this.state = {name: 'Frarthur'};
-    this.changeName = this.changeName.bind(this); // so we can call name directly
+    this.changeName = this.changeName.bind(this); // so we can call property -> name directly
   }
 
   changeName (newName) {
@@ -15,8 +16,12 @@ class SelectParentClass extends Component {
   }
 
   render () {
+    // you may call properties or functions just like a regular object inside a return
     return (
-      <SelectChildClass name={this.state.name} onChange={this.changeName} />
+      <div>
+        <SelectChildClass onChange={this.changeName}/>
+        <SelectSiblingClass name={this.state.name}/>
+      </div>
     );
   }
 }
