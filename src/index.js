@@ -16,6 +16,7 @@ import ButtonParentClass from './tutorial/state/ButtonParentClass';
 import SelectParentClass from './tutorial/state/SelectParentClass';
 
 import StyleMe from './tutorial/style/StyleMe';
+import Home from './tutorial/style/Home';
 
 import registerServiceWorker from './registerServiceWorker';
 const rootDiv = document.getElementById('root');
@@ -35,5 +36,6 @@ ReactDOM.render(<ButtonParentClass />, document.getElementById('child-parent-but
 ReactDOM.render(<SelectParentClass />, document.getElementById('child-parent-select'));
 
 ReactDOM.render(<StyleMe/>, document.getElementById('styling'));
+ReactDOM.render(<Home />, document.getElementById('home-style'));
 
 registerServiceWorker();
