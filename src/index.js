@@ -15,6 +15,8 @@ import Parent from './tutorial/state/Parent';
 import ButtonParentClass from './tutorial/state/ButtonParentClass';
 import SelectParentClass from './tutorial/state/SelectParentClass';
 
+import StyleMe from './tutorial/style/StyleMe';
+
 import registerServiceWorker from './registerServiceWorker';
 const rootDiv = document.getElementById('root');
 ReactDOM.render(<App />, rootDiv);
@@ -31,5 +33,7 @@ ReactDOM.render(<ColorToggle />, document.getElementById('state-toggle-color'));
 ReactDOM.render(<Parent />, document.getElementById('child-parent-state'));
 ReactDOM.render(<ButtonParentClass />, document.getElementById('child-parent-button'));
 ReactDOM.render(<SelectParentClass />, document.getElementById('child-parent-select'));
+
+ReactDOM.render(<StyleMe/>, document.getElementById('styling'));
 
 registerServiceWorker();
