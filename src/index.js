@@ -17,6 +17,7 @@ import SelectParentClass from './tutorial/state/SelectParentClass';
 
 import StyleMe from './tutorial/style/StyleMe';
 import Home from './tutorial/style/Home';
+import GuineaPigsContainer from './tutorial/soc/containers/GuineaPigsContainer';
 
 import registerServiceWorker from './registerServiceWorker';
 const rootDiv = document.getElementById('root');
@@ -37,5 +38,6 @@ ReactDOM.render(<SelectParentClass />, document.getElementById('child-parent-sel
 
 ReactDOM.render(<StyleMe/>, document.getElementById('styling'));
 ReactDOM.render(<Home />, document.getElementById('home-style'));
+ReactDOM.render(<GuineaPigsContainer />, document.getElementById('guinea-pigs'));
 
 registerServiceWorker();
