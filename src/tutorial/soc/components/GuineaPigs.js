@@ -16,9 +16,9 @@ import React from 'react';
 // written as stateless functional components
 export const GuineaPigs = (props) => {
   return (
-      <div>
-        <h1>Cute Guinea Pigs</h1>
-        <img src={props.src} alt="Guinea pigs pics"/>
-      </div>
+    <div>
+      <h1>Cute Guinea Pigs</h1>
+      <img src={props.src} alt="Guinea pigs pics"/>
+    </div>
   );
 };
