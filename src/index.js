@@ -20,6 +20,7 @@ import Home from './tutorial/style/Home';
 import GuineaPigsContainer from './tutorial/soc/containers/GuineaPigsContainer';
 import BookList from './tutorial/proptypes/BookList';
 import Input from './tutorial/forms/Input';
+import EnthusedApp from './tutorial/lifecycle/updating/App';
 
 import registerServiceWorker from './registerServiceWorker';
 const rootDiv = document.getElementById('root');
@@ -43,5 +44,6 @@ ReactDOM.render(<Home />, document.getElementById('home-style'));
 ReactDOM.render(<GuineaPigsContainer />, document.getElementById('guinea-pigs'));
 ReactDOM.render(<BookList />, document.getElementById('book-list'));
 ReactDOM.render(<Input/>, document.getElementById('react-forms'));
+ReactDOM.render(<EnthusedApp/>, document.getElementById('enthused'));
 
 registerServiceWorker();
