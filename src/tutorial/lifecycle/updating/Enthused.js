@@ -9,21 +9,17 @@ export class Enthused extends Component {
   }
 
   /*
-  * componentWillUnmount is the only unmounting lifecycle method!
-  * 
-  * If a component initiates any methods that require cleanup,
-  * then componentWillUnmount is where you should put that cleanup
-  * */
+   * componentWillUnmount is the only unmounting lifecycle method!
+   *
+   * If a component initiates any methods that require cleanup,
+   * then componentWillUnmount is where you should put that cleanup
+   * */
   componentWillUnmount() {
     // stop the adding of text
     clearInterval(this.interval);
   }
 
   render() {
-    return (
-        <button onClick={this.props.toggle}>
-          Stop!
-        </button>
-    );
+    return (<button onClick={this.props.toggle}>Stop!</button>);
   }
 }

@@ -33,14 +33,10 @@ class App extends Component {
     });
   }
 
-  setText(text) {
-    this.setState({
-      text: text
-    });
-  }
-
   handleChange(e) {
-    this.setText(e.target.value);
+    this.setState({
+      text: e.target.value
+    });
   }
 
   render() {
@@ -60,7 +56,6 @@ class App extends Component {
         </div>
     );
   }
-
 }
 
 export default App;
