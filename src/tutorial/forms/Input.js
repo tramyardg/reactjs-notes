@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 
-export class Input extends Component {
+class Input extends Component {
   constructor(props) {
     super(props);
     this.state = {userInput: ''};
@@ -17,6 +16,7 @@ export class Input extends Component {
   render() {
     return (
         <div>
+          <h1>Input onChange example</h1>
           <input type="text" onChange={this.handleUserInput} value={this.state.userInput} />
           <p>Value I get from input due to onChange event:</p>
           <h1>{this.state.userInput}</h1>
@@ -25,7 +25,4 @@ export class Input extends Component {
   }
 }
 
-ReactDOM.render(
-    <Input />,
-    document.getElementById('app')
-);
+export default Input;

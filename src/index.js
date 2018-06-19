@@ -19,6 +19,7 @@ import StyleMe from './tutorial/style/StyleMe';
 import Home from './tutorial/style/Home';
 import GuineaPigsContainer from './tutorial/soc/containers/GuineaPigsContainer';
 import BookList from './tutorial/proptypes/BookList';
+import Input from './tutorial/forms/Input';
 
 import registerServiceWorker from './registerServiceWorker';
 const rootDiv = document.getElementById('root');
@@ -41,5 +42,6 @@ ReactDOM.render(<StyleMe/>, document.getElementById('styling'));
 ReactDOM.render(<Home />, document.getElementById('home-style'));
 ReactDOM.render(<GuineaPigsContainer />, document.getElementById('guinea-pigs'));
 ReactDOM.render(<BookList />, document.getElementById('book-list'));
+ReactDOM.render(<Input/>, document.getElementById('react-forms'));
 
 registerServiceWorker();
