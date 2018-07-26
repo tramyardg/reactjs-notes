@@ -5,8 +5,18 @@ import {SelectSiblingClass} from './SelectSiblingClass';
 class SelectParentClass extends Component {
   constructor (props) {
     super(props);
-    this.state = {name: 'Frarthur'};
+    this.state = {name: ''};
     this.changeName = this.changeName.bind(this); // so we can call property -> name directly
+  }
+
+  componentDidMount() {
+    fetch('https://api.myjson.com/bins/y1h82')
+        .then(res => res.json())
+        .then(data => {
+          this.setState({
+            name: data.name
+          });
+        });
   }
 
   changeName (newName) {
