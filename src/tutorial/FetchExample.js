@@ -30,14 +30,26 @@ class FetchExample extends Component {
             (error) => {
               this.setState({
                 isLoaded: true,
-                error
+                error: {message: 'There was an error!'}
               });
             }
         )
   }
 
   render() {
-    return (<div>hello</div>);
+    if (this.state.error) {
+      return (<div>Error: {this.state.error.message}</div>);
+    } else if(!this.state.isLoaded) {
+      return (<div>Loading...</div>);
+    } else {
+      return this.state.items.map(function (row, index) {
+        return (
+            <ul key={index}>
+              <li>{row.name} : {row.price}</li>
+            </ul>
+        )
+      });
+    }
   }
 }
 

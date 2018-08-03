@@ -21,6 +21,7 @@ import GuineaPigsContainer from './tutorial/soc/containers/GuineaPigsContainer';
 import BookList from './tutorial/proptypes/BookList';
 import Input from './tutorial/forms/Input';
 import EnthusedApp from './tutorial/lifecycle/updating/App';
+import FetchExample from './tutorial/FetchExample';
 
 import registerServiceWorker from './registerServiceWorker';
 const rootDiv = document.getElementById('root');
@@ -45,5 +46,6 @@ ReactDOM.render(<GuineaPigsContainer />, document.getElementById('guinea-pigs'))
 ReactDOM.render(<BookList />, document.getElementById('book-list'));
 ReactDOM.render(<Input/>, document.getElementById('react-forms'));
 ReactDOM.render(<EnthusedApp/>, document.getElementById('enthused'));
+ReactDOM.render(<FetchExample/>, document.getElementById('fetch-example'));
 
 registerServiceWorker();
