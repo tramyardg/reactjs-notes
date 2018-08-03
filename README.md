@@ -1430,6 +1430,7 @@ This will make sure that all the asset paths are relative to `index.html`. You w
 - [class name](#class-name)
 - [render a component](#render-a-component)
 - [importing a component](#importing-a-component)
+- [making an ajax call](#making-an-ajax-call)
 ***
 ### create ReactJS app
 ```
@@ -1544,4 +1545,34 @@ class App extends React.Component {
   }
 }
 ReactDOM.render(<App />, document.getElementById('app'));
+```
+### making an ajax call
+```
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      items: []
+    };
+  }
+  componentDidMount() {
+    const apiURI = 'https://api.myjson.com/bins/17wm14';
+    fetch(apiURI)
+        .then(res => res.json())
+        .then(
+            (result) => {
+              this.setState({
+                isLoaded: true,
+                items: result.items
+              });
+            },
+            (error) => {
+              this.setState({
+                isLoaded: true,
+                error: {message: 'There was an error!'}
+              });
+            }
+        )
+  }
 ```
